@@ -2,7 +2,7 @@ package main.java.com.maxfom.javacore.chapter07;
 // Простой пример рекурсии
 class Factorial {
     // это рекурсивный метод
-    int fact (int n) {
+    int fact(int n) {
         int result;
 
         if (n == 1) return 1;
