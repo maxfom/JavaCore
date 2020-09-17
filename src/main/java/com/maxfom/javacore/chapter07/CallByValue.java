@@ -1,5 +1,5 @@
 package main.java.com.maxfom.javacore.chapter07;
-// Аргументы примитивных типов передаются по значению
+// Аргументы примитивных типов передаются по их значению
 class Tests {
     void meth(int i, int j) {
         i *= 2;
