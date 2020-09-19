@@ -3,9 +3,9 @@ package main.java.com.maxfom.javacore.chapter08;
 // для расширения класса Box
 
 class Box {
-    double width;
-    double height;
-    double depth;
+    private double width;
+    private double height;
+    private double depth;
 
     // клон объекта
     Box (Box ob) {  // передать объект конструктору
@@ -45,10 +45,24 @@ class BoxWeight extends Box {
 
     // конструктор веса
     BoxWeight(double w, double h, double d, double m) {
-        width = w;
-        height = h;
-        depth = d;
+        super(w, h, d); // вызов конструктора из супер класса
         weight = m;
+    }
+
+    // клон объекта делаем
+    BoxWeight(BoxWeight ob) {   // передает объект конструктору
+        super(ob);
+        weight = ob.weight;
+    }
+
+    BoxWeight(double len, double m) {
+        super (len);
+        weight = m;
+    }
+
+    BoxWeight() {
+        super();
+        weight = -1;
     }
 }
 
@@ -57,9 +71,7 @@ class ColorBox extends Box {
     String color;
 
     ColorBox(double w, double h, double d, String c) {
-        width = w;
-        height = h;
-        depth = d;
+        super(w, h, d);
         color = c;
     }
 }
