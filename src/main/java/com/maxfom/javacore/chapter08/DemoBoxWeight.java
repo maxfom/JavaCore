@@ -51,10 +51,23 @@ class BoxWeight extends Box {
         weight = m;
     }
 }
+
+// расширение класса Box, подключаем доп свойство
+class ColorBox extends Box {
+    String color;
+
+    ColorBox(double w, double h, double d, String c) {
+        width = w;
+        height = h;
+        depth = d;
+        color = c;
+    }
+}
 public class DemoBoxWeight {
     public static void main(String[] args) {
         BoxWeight mybox1 = new BoxWeight(10, 20, 15, 34.3);
         BoxWeight mybox2 = new BoxWeight(2,3,4,0.076);
+        ColorBox mybox3 = new ColorBox(5,6,5,"Красный");
         double vol;
 
         vol = mybox1.volume();
@@ -65,5 +78,10 @@ public class DemoBoxWeight {
         vol = mybox2.volume();
         System.out.println("Объем mybox2 равен " + vol);
         System.out.println("Вес mybox2 равен " + mybox2.weight);
+        System.out.println();
+
+        vol = mybox3.volume();
+        System.out.println("Объем mybox3 равен " + vol);
+        System.out.println("Цвет коробки " + mybox3.color);
     }
 }
