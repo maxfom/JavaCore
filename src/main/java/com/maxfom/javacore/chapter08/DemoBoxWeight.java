@@ -64,6 +64,33 @@ class BoxWeight extends Box {
         super();
         weight = -1;
     }
+
+}
+// добавляем поле стоимости через новый класс (вложенный во вложенный) xD
+class Shipment extends BoxWeight {
+double cost;
+
+    Shipment(Shipment ob) {
+    super(ob);
+    cost = ob.cost;
+}
+
+    Shipment(double w, double h, double d, double m, double co) {
+        super(w, h, d, m);  // конструктор супер класса
+        cost = co;
+}
+
+    Shipment() {
+        super();
+        cost = -1;
+    }
+
+    Shipment(double len, double m, double co)    {
+        super(len, m);
+        cost = co;
+    }
+
+
 }
 
 // расширение класса Box, подключаем доп свойство
